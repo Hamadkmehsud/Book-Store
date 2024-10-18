@@ -1,0 +1,22 @@
+{% extends "BookStoreApp/base.html"%}
+
+{% block title %}
+{{title}}
+{%endblock%}
+
+{% block content %}
+
+<h2>{{title}}</h2>
+
+<h3>{{author}}</h3>
+
+<p>The Book is a Rating of {{rating}}</p>
+
+{% if is_bestselling%}
+<p>The {{title}} Book is best selling Book </p>
+{% else %}
+<p>This {{title}} Book is not a besting Book</p>
+{%endif%}
+<p> Author Adress : {{author_address}}
+
+{% endblock %}

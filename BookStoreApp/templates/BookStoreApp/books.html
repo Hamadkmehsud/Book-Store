@@ -1,0 +1,30 @@
+{% extends "BookStoreApp/base.html" %}
+
+{% block content %}
+    <h3>Hello sir, this is your All Books page</h3>
+    
+    <a href="{% url 'home_page' %}" class="button">Back Home</a>
+
+    <section>
+        <style>
+            table, th, td {
+            border: 1.5px solid grey;
+            }
+        </style>
+        <table style="width:50%">
+            <tr>
+                <th>Book Title</th>
+                <th>Author Name</th>
+            </tr>
+            {% for book in books_list %}
+            <tr>
+                <td><a href='{{ book.get_absolute_url }}'>{{ book.title}}</td>
+                <td>{{ book.author }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <p>The total number of  Books in DataBase are {{total_books}} </p>
+        <p> Average rating on books {{avg_rating}}.</p>
+    </section>
+{% endblock %}
